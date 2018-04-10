@@ -4,4 +4,9 @@
 <p-dropdown [options]="countries" [(ngModel)]="selectCountry" ></p-dropdown>
 
 <p>Multiple Select</p>
-<p-multiSelect [options]="countries2" [(ngModel)]="selectCountry2" [maxSelectedLabels]="10" ></p-multiSelect>
+<p-multiSelect defaultLabel="Select Country" styleClass="custom" [options]="countries2" [(ngModel)]="selectCountry2" [maxSelectedLabels]="10" ></p-multiSelect>
+
+
+<p>Multiple Select Double Remove</p>
+<p-chips (onRemove)="removeItem($event)" [(ngModel)]="values"></p-chips>
+<p-multiSelect  (onChange)="selected($event)" defaultLabel="Select Country" styleClass="custom" [options]="countries3" [(ngModel)]="selectCountry3" [maxSelectedLabels]="10" ></p-multiSelect>
