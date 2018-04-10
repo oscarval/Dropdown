@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { DropwdownComponent } from './dropwdown/dropwdown.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DropwdownComponent
   ],
   imports: [
     BrowserModule
