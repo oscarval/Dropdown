@@ -12,6 +12,7 @@ import { CountriesService } from './services/countries.service';
 
 // Extras
 import {DropdownModule} from 'primeng/primeng';
+import {MultiSelectModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {DropdownModule} from 'primeng/primeng';
     BrowserModule,
     FormsModule,
     DropdownModule,
+    MultiSelectModule,
     BrowserAnimationsModule
   ],
   providers: [CountriesService],

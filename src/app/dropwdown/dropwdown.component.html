@@ -1,3 +1,7 @@
 
 
-<p-dropdown [options]="countries" [(ngModel)]="selectCountry"></p-dropdown>
+<p>Simple select</p>
+<p-dropdown [options]="countries" [(ngModel)]="selectCountry" ></p-dropdown>
+
+<p>Multiple Select</p>
+<p-multiSelect [options]="countries2" [(ngModel)]="selectCountry2" [maxSelectedLabels]="10" ></p-multiSelect>

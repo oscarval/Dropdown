@@ -12,21 +12,28 @@ export class CountriesService {
     console.log('init services');
   }
 
+  // Simulate call api to get Countries
   getCountries(): Observable<any> {
     // create observable and simulate call api 1 second returning all countries
     // tslint:disable-next-line:prefer-const
     let data = new Observable(observer => {
         let arrayData = [];
         setTimeout(() => {
-            Object.keys(this.countries).forEach((key, index) => {
-                let aux = {label: this.countries[key], value: key};
-                arrayData.push(aux);
-            });
-            observer.next(arrayData);
+            observer.next(this.formatData());
         }, 1000);
     });
 
     return data;
+  }
+
+  // Format data like PrimeNG need
+  formatData():any{
+    let arrayData = [];
+    Object.keys(this.countries).forEach((key, index) => {
+        let aux = {label: this.countries[key], value: {id: index, name: this.countries[key], code: key}};
+        arrayData.push(aux);
+    });
+    return arrayData;
   }
 
 }
