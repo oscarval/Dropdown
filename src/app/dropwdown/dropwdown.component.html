@@ -9,4 +9,4 @@
 
 <p>Multiple Select Double Remove</p>
 <p-chips (onRemove)="removeItem($event)" [(ngModel)]="values"></p-chips>
-<p-multiSelect  (onChange)="selected($event)" defaultLabel="Select Country" styleClass="custom" [options]="countries3" [(ngModel)]="selectCountry3" [maxSelectedLabels]="10" ></p-multiSelect>
+<p-multiSelect  [displaySelectedLabel]=false (onChange)="selected($event)" defaultLabel="Select Country" styleClass="custom" [options]="countries3" [(ngModel)]="selectCountry3" [maxSelectedLabels]="10" ></p-multiSelect>

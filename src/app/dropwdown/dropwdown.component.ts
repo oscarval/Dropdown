@@ -26,7 +26,7 @@ export class DropwdownComponent implements OnInit {
   countries2: SelectItem[];
   selectCountry2: Country;
   countries3: SelectItem[];
-  selectCountry3: Country;
+  selectCountry3: any;
   values: string[];
 
 
@@ -40,25 +40,30 @@ export class DropwdownComponent implements OnInit {
       });
   }
 
-  ngOnInit(){
+  ngOnInit() {
 
   }
-  
-  selected(e){
+
+  selected(e) {
     this.values = [];
+    // tslint:disable-next-line:prefer-const
     let val = e.value;
-    for(let item of val){
+    // tslint:disable-next-line:prefer-const
+    for ( let item of val) {
       this.values.push(item.name);
     }
 
   }
 
-  removeItem(e){
+  removeItem(e): any {
     console.log(e);
-    let index = array.indexOf(e.value);
-    if (index > -1) {
-      this.selectCountry3.splice(index, 1);
-    }
+    console.log(this.selectCountry3);
+    this.selectCountry3.filter(elem => {
+      console.log(elem);
+      if ( elem.name === e.value) {
+        this.selectCountry3.splice(elem, 1);
+      }
+    });
   }
 
 }
